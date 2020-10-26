@@ -1,0 +1,28 @@
+{
+  "name": "arcgis-js-api-tools",
+  "version": "1.0.0",
+  "description": "Different tools with the ArcGIS API for Javascript (https://js.arcgis.com/)",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc && npm run buildcopy",
+    "lint": "tslint './src/*.ts'",
+    "buildcopy": "cpy \"./**/*.html\" \"./**/*.css\" \"./**/*.js\" \"!./node_modules\" build --parents"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaschaBrunnerCH/arcgis-js-api-tools.git"
+  },
+  "keywords": [],
+  "author": "Sascha Brunner <sbrunner@esri.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SaschaBrunnerCH/arcgis-js-api-tools/issues"
+  },
+  "homepage": "https://github.com/SaschaBrunnerCH/arcgis-js-api-tools#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/arcgis-js-api": "^4.17.0",
+    "cpy-cli": "^3.1.1",
+    "tslint": "^6.1.3"
+  }
+}

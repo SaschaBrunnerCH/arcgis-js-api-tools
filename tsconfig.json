@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "amd",
+    "lib": [
+      "dom",
+      "es5",
+      "es6"
+    ],
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "moduleResolution": "node",
+    "types": ["arcgis-js-api"],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": false,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "include": ["./**/*"],
+  "exclude": ["node_modules"]
+}
