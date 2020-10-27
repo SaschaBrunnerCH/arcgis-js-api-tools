@@ -37,7 +37,7 @@ define(["require", "exports", "esri/views/SceneView", "esri/WebScene", "esri/cor
     var view = new SceneView({
         map: webScene,
         container: "viewDiv",
-        ui: { components: [] } // disable the UI comonents
+        ui: { components: [] } // disable the UI components
     });
     webScene.when(function () {
         var slides = webScene.presentation.slides;
@@ -50,7 +50,10 @@ define(["require", "exports", "esri/views/SceneView", "esri/WebScene", "esri/cor
             }
             setTimeout(updateLoading, 1000);
             watchUtils.whenFalseOnce(view, "updating", function () {
-                goToSlide(startSlide);
+                console.log("SLIDE_" + startSlide + "_" + slides.length);
+                window.setTimeout(function () {
+                    goToSlide(startSlide);
+                }, waitTime);
             });
         });
         function goToSlide(i) {
@@ -64,6 +67,7 @@ define(["require", "exports", "esri/views/SceneView", "esri/WebScene", "esri/cor
                 })
                     .then(function () {
                     watchUtils.whenFalseOnce(view, "updating", function () {
+                        console.log("SLIDE_" + (i + 1) + "_" + slides.length);
                         window.setTimeout(function () {
                             goToSlide(i + 1);
                         }, waitTime);
