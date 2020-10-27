@@ -22,6 +22,13 @@ if (!urlParams.has("noinfo")) {
     document.getElementById("progressbarDiv")!.style.display = "block";
 }
 
+let portalOptions = {};
+if (!urlParams.has("enableSignIn")) {
+    // avoid ui authentication/identification for portal or layers
+    esriConfig.request.useIdentity = false;      // layer
+    portalOptions = { authMode: "anonymous" };   // portal
+}
+
 let startSlide = 0;
 if (urlParams.has("start")) {
     startSlide = parseInt(urlParams.get("start") || startSlide.toString(), 0);
@@ -39,7 +46,8 @@ if (urlParams.has("wait")) {
 
 const webScene = new WebScene({
     portalItem: {
-        id: webSceneId
+        id: webSceneId,
+        portal: portalOptions
     }
 });
 
