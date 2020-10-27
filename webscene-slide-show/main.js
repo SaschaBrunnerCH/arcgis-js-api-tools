@@ -17,6 +17,12 @@ define(["require", "exports", "esri/views/SceneView", "esri/WebScene", "esri/cor
         document.getElementById("slideCountDiv").style.display = "block";
         document.getElementById("progressbarDiv").style.display = "block";
     }
+    var portalOptions = {};
+    if (!urlParams.has("enableSignIn")) {
+        // avoid ui authentication/identification for portal or layers
+        esriConfig.request.useIdentity = false; // layer
+        portalOptions = { authMode: "anonymous" }; // portal
+    }
     var startSlide = 0;
     if (urlParams.has("start")) {
         startSlide = parseInt(urlParams.get("start") || startSlide.toString(), 0);
@@ -31,7 +37,8 @@ define(["require", "exports", "esri/views/SceneView", "esri/WebScene", "esri/cor
     }
     var webScene = new WebScene({
         portalItem: {
-            id: webSceneId
+            id: webSceneId,
+            portal: portalOptions
         }
     });
     var view = new SceneView({
