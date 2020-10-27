@@ -16,6 +16,7 @@ body,
   z-index: 2;
   top: 0;
   right: 0;
+  font-family: "Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 20pt;
   font-weight: bolder;
   width: 100%;
@@ -33,6 +34,7 @@ body,
   z-index: 2;
   bottom: 0;
   right: 0;
+  font-family: "Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 20pt;
   font-weight: bolder;
   width: 100%;
@@ -49,6 +51,7 @@ body,
   position: absolute;
   z-index: 3;
   bottom: 0;
+  font-family: "Avenir Next","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 10pt;
   font-weight: bolder;
   width: 10%;
