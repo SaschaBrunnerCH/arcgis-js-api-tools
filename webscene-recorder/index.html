@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>WebScene Recorder</title>
+
+    <script>
+      console.log(location.pathname);
+      var locationPath = location.pathname.replace(/\/[^\/]+$/, "");
+      console.log(locationPath);
+      window.dojoConfig = {
+        packages: [
+          {
+            name: "main",
+            location: locationPath,
+          },
+        ],
+      };
+    </script>
+
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.17/esri/themes/light/main.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="https://js.arcgis.com/4.17/"></script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+    <div id="modalDiv">
+      <div id="modalContentDiv">
+        <div id="recordingDiv">
+          <div>
+            <div>
+              <span class="dot blink"></span
+              ><span id="recordingDetailsDiv">&nbsp; Recording</span>
+            </div>
+            <div id="titleDiv"></div>
+          </div>
+        </div>
+        <div id="videoInfoDiv">
+          <div id="videoTitleDiv"></div>
+          <video
+            autoplay
+            controls
+            muted
+            disablePictureInPicture
+            controlsList="nodownload"
+            id="videoWebScene"
+          ></video><br>
+          <a href="" download id="videoDownloadLink">Download video</a>
+        </div>
+        <div id="progressbarDiv"></div>
+      </div>
+    </div>
+    <script>
+      require(["main"]);
+    </script>
+  </body>
+</html>

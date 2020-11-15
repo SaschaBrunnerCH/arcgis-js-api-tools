@@ -17,7 +17,7 @@
     "alwaysStrict": true,
     "noUnusedLocals": true,
     "moduleResolution": "node",
-    "types": ["arcgis-js-api"],
+    "types": ["arcgis-js-api", "dom-mediacapture-record"],
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "inlineSourceMap": false,
