@@ -1,0 +1,116 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#viewDiv {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  min-width: 640px;
+  min-height: 360px;
+  max-width: 1280px;
+  max-height: 720px;
+  border: 3px solid rgb(0, 0, 0);
+}
+
+#modalDiv {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modalContentDiv {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 640px;
+  min-height: 360px;
+  max-width: 1280px;
+  max-height: 720px;
+  margin: auto;
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid rgb(255, 62, 62);
+}
+
+#recordingDiv {
+  padding: 20px;
+}
+
+#videoInfoDiv {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 640px;
+  min-height: 360px;
+  max-width: 1280px;
+  max-height: 720px;
+  margin: auto;
+  padding: 20px;
+}
+
+#videoTitleDiv {
+  font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: 3px solid rgb(255, 62, 62);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#videoWebScene {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 70%;
+  z-index: 100;
+}
+
+#progressbarDiv {
+  z-index: 1;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: #ff0000;
+  visibility: visible;
+  transition: width 0.3s linear;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.blink {
+  animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+}
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
